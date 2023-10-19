@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<h3 class='text-white my-5'>Login Here</h3>
+
+ <div>
+     <form action="" method='post'>
+         {% csrf_token %}
+         {% for form in form %}
+          <div class="form-group">
+           {{form.label_tag}} {{form}} <small class='text-warning'>{{form.errors|striptags}}</small>
+          </div>
+         {% endfor %}
+         <input class="btn btn-outline-success mt-2 bg-info" type="submit" value="Login">
+         {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+          <p class="text-danger">{{error}}</p>
+          {% endfor %}
+         {% endif %}
+     </form>
+ </div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div>
+    <h1>Home Page</h1>
+    {% for report in report %}
+    <div class="card bg-light shadow p-5 mt-5">
+        <h2 class='text-primary'>{{report.Title}}</h2>
+        <p>{{report.Descriptions}}</p>
+        
+    </div>
+    {% endfor %}
+</div>
+    {% comment %} <div>
+        <h1 class="text-white">Home Page</h1>
+        {% for report in report %}
+        <div class="card bg-light ">
+            <h1 class="text-primary">{{report.Title}}</h1>
+            <p>{{report.Descriptions}}</p>
+        
+       
+    </div>
+    {% endfor %}
+</div> {% endcomment %}
+{% endblock content %}
