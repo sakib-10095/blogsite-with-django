@@ -64,3 +64,7 @@ def loginPage(request):
 def logoutPage(request):
     logout(request)
     return redirect('loginPage')
+
+
+def updatepost(request):
+    return render(request,'update.html')
